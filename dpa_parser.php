@@ -13,5 +13,6 @@ $folder = '/tmp/dpa/dpa-sportsline/dpa-SportsLine-index';
 $results = DPAParser\Parser::parse_index_folder($folder);
 
 foreach ($results as $result) {
-  var_dump($result->media());
+  $media = $result->media()[0];
+  echo $media->version();
 }
