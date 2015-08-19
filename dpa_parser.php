@@ -9,6 +9,8 @@ require 'dpa_parser/result/media.php';
 require 'dpa_parser/result/media/text.php';
 
 
+# @TODO: Only for testing. Remove in production
+
 $folder = '/tmp/dpa/dpa-sportsline/dpa-SportsLine-index';
 $parser = new DPAParser\Parser($folder);
 $results = $parser->fixtures();
