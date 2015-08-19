@@ -14,5 +14,5 @@ $results = DPAParser\Parser::parse_index_folder($folder);
 
 foreach ($results as $result) {
   $media = $result->media()[0];
-  echo $media->version();
+  echo $media->regsrc();
 }

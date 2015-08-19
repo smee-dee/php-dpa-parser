@@ -11,6 +11,10 @@ class Text extends \DPAParser\Result\Media {
     return $this->id_string_part(1);
   }
 
+  public function regsrc() {
+    return $this->xml()->head->docdata->{'doc-id'}['regsrc'];
+  }
+
   public function title() {
     return $this->xml()->head->title;
   }
