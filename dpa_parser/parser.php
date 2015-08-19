@@ -3,15 +3,15 @@
 namespace DPAParser;
 
 class Parser {
-  var $indexFolder;
+  var $index_folder;
 
-  public function __construct($indexFolder) {
-    $this->indexFolder = $indexFolder;
+  public function __construct($index_folder) {
+    $this->index_folder = $index_folder;
   }
 
   public function fixtures() {
     $fixtures = [];
-    foreach (glob("{$this->indexFolder}/*.xml") as $file) {
+    foreach (glob("{$this->index_folder}/*.xml") as $file) {
       $fixtures[] = new \DPAParser\Result\Fixture($file);
       break; // @TODO: Remove before production
     }
