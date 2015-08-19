@@ -10,7 +10,8 @@ require 'dpa_parser/result/media/text.php';
 
 
 $folder = '/tmp/dpa/dpa-sportsline/dpa-SportsLine-index';
-$results = DPAParser\Parser::parse_index_folder($folder);
+$parser = new DPAParser\Parser($folder);
+$results = $parser->fixtures();
 
 foreach ($results as $result) {
   $media = $result->media()[0];
