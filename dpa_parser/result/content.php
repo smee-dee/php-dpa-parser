@@ -10,6 +10,7 @@ class Content {
     switch(strtolower($name)) {
     case 'table': return new Content\Table($node, $options);
     case 'p': return new Content\P($node, $options);
+    case 'block': return new Content\Block($node, $options);
     default: self::unknown_node_exception($node);
     }
   }
