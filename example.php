@@ -7,8 +7,8 @@
 
 require 'dpa_parser.php';
 
-$folder = '/tmp/dpa/dpa-SportsLine-index';
-$parser = new DPAParser\Parser($folder);
+$index_folder = '/tmp/dpa/dpa-SportsLine-index';
+$parser = new DPAParser\Parser($index_folder);
 $fixtures = $parser->fixtures();
 
 function walker($element) {
