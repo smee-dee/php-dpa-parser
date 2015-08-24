@@ -13,7 +13,7 @@ class Parser {
     $fixtures = [];
     foreach (glob("{$this->index_folder}/*.xml") as $file) {
       $fixtures[] = new \DPAParser\Result\Fixture($file);
-      break; // @TODO: Remove before production
+      // break; // @TODO: Remove before production
     }
     return $fixtures;
   }

@@ -8,18 +8,21 @@ require 'dpa_parser/result/fixture.php';
 require 'dpa_parser/result/media.php';
 require 'dpa_parser/result/media/text.php';
 require 'dpa_parser/result/content.php';
-require 'dpa_parser/result/content/common.php';
+
+foreach (glob('dpa_parser/result/content/*.php') as $file) {
+  require $file;
+}
 
 
 # @TODO: Only for testing. Remove in production
 
 $folder = '/tmp/dpa/dpa-SportsLine-index';
 $parser = new DPAParser\Parser($folder);
-$results = $parser->fixtures();
+$fixtures = $parser->fixtures();
 
-foreach ($results as $result) {
-  $media = $result->media()[0];
-  foreach ($media->content() as $element) {
-    echo $element->toHtml();
+foreach ($fixtures as $fixture) {
+  foreach ($fixture->media() as $media) {
+    file_put_contents("output/{$media->id()}_{$media->version()}.html",
+                      $media->toHtml());
   }
 }

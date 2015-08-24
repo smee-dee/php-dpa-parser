@@ -9,4 +9,12 @@ class Media extends Base {
     default:     throw new Exception("Media: Unkown type '{$type}'!");
     }
   }
+
+  public function toHtml($options = []) {
+    $html = '';
+    foreach ($this->content($options) as $element) {
+      $html .= $element->toHtml();
+    }
+    return $html;
+  }
 }
