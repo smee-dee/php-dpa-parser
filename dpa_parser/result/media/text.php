@@ -23,10 +23,10 @@ class Text extends \DPAParser\Result\Media {
     return $this->body()->{'body.head'}->hedline->hl1;
   }
 
-  public function content($options = []) {
+  public function content() {
     $result = [];
     foreach ($this->body()->{'body.content'}->children() as $child) {
-      $result[] = \DPAParser\Result\Content::parse($child, $options);
+      $result[] = \DPAParser\Result\Content::parse($child);
     }
     return $result;
   }

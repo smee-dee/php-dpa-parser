@@ -10,9 +10,9 @@ class Media extends Base {
     }
   }
 
-  public function to_html($options = [], $walker = null) {
+  public function to_html($walker = null) {
     $html = '';
-    foreach ($this->content($options) as $element) {
+    foreach ($this->content() as $element) {
       if (isset($walker)) {
         $result = $walker($element);
         if (is_string($result)) {

@@ -3,22 +3,21 @@
 namespace DPAParser\Result;
 
 class Content {
-  var $node, $options;
+  var $node;
 
-  public static function parse($node, $options = []) {
+  public static function parse($node) {
     $name = $node->getName();
     switch(strtolower($name)) {
-    case 'table': return new Content\Table($node, $options);
-    case 'p': return new Content\P($node, $options);
-    case 'block': return new Content\Block($node, $options);
-    case 'media': return Content\Media::parse($node, $options);
+    case 'table': return new Content\Table($node);
+    case 'p': return new Content\P($node);
+    case 'block': return new Content\Block($node);
+    case 'media': return Content\Media::parse($node);
     default: self::unknown_node_exception($node);
     }
   }
 
-  function __construct($node, $options = []) {
-    $this->node    = $node;
-    $this->options = $options;
+  function __construct($node) {
+    $this->node = $node;
   }
 
   public function to_html() {

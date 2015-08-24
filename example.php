@@ -20,7 +20,7 @@ function walker($element) {
 foreach ($fixtures as $fixture) {
   foreach ($fixture->media() as $media) {
     file_put_contents("output/{$media->id()}_{$media->version()}.html",
-                      $media->to_html(null, 'walker'));
+                      $media->to_html('walker'));
   }
 }
 

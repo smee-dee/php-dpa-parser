@@ -17,10 +17,10 @@ abstract class Media extends \DPAParser\Result\Content {
     return $result;
   }
 
-  public static function parse($node, $options = []) {
+  public static function parse($node) {
     $type = $node['media-type'];
     switch(strtolower($type)) {
-    case 'image': return new Media\Image($node, $options);
+    case 'image': return new Media\Image($node);
     default: throw new \Exception("Unkown Content Media: {$type}");
     }
   }
