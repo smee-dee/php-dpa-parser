@@ -11,6 +11,7 @@ class Content {
     case 'table': return new Content\Table($node, $options);
     case 'p': return new Content\P($node, $options);
     case 'block': return new Content\Block($node, $options);
+    case 'media': return Content\Media::parse($node, $options);
     default: self::unknown_node_exception($node);
     }
   }
@@ -20,7 +21,7 @@ class Content {
     $this->options = $options;
   }
 
-  public function toHtml() {
+  public function to_html() {
     return $this->node->asXml();
   }
 
