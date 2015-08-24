@@ -23,6 +23,18 @@ class Text extends \DPAParser\Result\Media {
     return $this->body()->{'body.head'}->hedline->hl1;
   }
 
+  public function content($options = []) {
+    $result = [];
+    foreach ($this->body()->{'body.content'}->children() as $child) {
+      $result[] = \DPAParser\Result\Content::parse($child, $options);
+    }
+    return $result;
+  }
+
+  private function body() {
+    return $this->xml()->body;
+  }
+
   private function id_string_part($index) {
     $id_string = $this->xml()->head->docdata->{'doc-id'}['id-string'];
     return explode(':', $id_string)[$index];
