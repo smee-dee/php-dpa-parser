@@ -71,9 +71,12 @@ abstract class Media extends \DPAParser\Result\Content {
     return $this->current_reference()[$attribute];
   }
 
-  protected function current_reference() {
+  protected function current_reference($size = null) {
+    if (!isset($size)) $size = $this->size;
     foreach ($this->node->xpath('media-reference') as $image) {
-      if (strpos($image['name'], $this->size) >= 0) return $image;
+      if (strpos($image['name'], $size) !== false) return $image;
     }
+    if ($size == 'large') return $this->current_reference('medium');
+    if ($size == 'medium') return $this->current_reference('thumbnail');
   }
 }
