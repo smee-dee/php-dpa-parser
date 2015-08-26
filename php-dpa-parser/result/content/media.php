@@ -12,7 +12,6 @@ abstract class Media extends \DPAParser\Result\Content {
     $result .= '<figure>';
     $result .= $this->media_tag();
     $result .= $this->figcaption_tag();
-    $result .= $this->producer_tag();
     $result .= '</figure>';
     return $result;
   }
