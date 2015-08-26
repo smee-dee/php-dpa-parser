@@ -15,6 +15,10 @@ class Text extends \DPAParser\Result\Media {
     return (string)$this->xml()->head->docdata->{'doc-id'}['regsrc'];
   }
 
+  public function timestamp() {
+    return (string)$this->xml()->head->docdata->{'date.issue'}['norm'];
+  }
+
   public function title() {
     return (string)$this->xml()->head->title;
   }
