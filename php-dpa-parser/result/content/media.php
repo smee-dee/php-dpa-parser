@@ -17,7 +17,7 @@ abstract class Media extends \DPAParser\Result\Content {
     return $result;
   }
 
-  public function setSize($size) {
+  public function set_size($size) {
     $this->size = $size;
   }
 

@@ -19,6 +19,7 @@ $corrections = $parser->corrections();
 function walker($element) {
   if (is_a($element, '\DPAParser\Result\Content\Media\Image')) {
     $element->set_base_path('/my/public/image/or/cdn/dir/');
+    $element->set_size('large');
   }
 }
 
