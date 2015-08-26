@@ -12,15 +12,15 @@ class Text extends \DPAParser\Result\Media {
   }
 
   public function regsrc() {
-    return $this->xml()->head->docdata->{'doc-id'}['regsrc'];
+    return (string)$this->xml()->head->docdata->{'doc-id'}['regsrc'];
   }
 
   public function title() {
-    return $this->xml()->head->title;
+    return (string)$this->xml()->head->title;
   }
 
   public function headline() {
-    return $this->body()->{'body.head'}->hedline->hl1;
+    return (string)$this->body()->{'body.head'}->hedline->hl1;
   }
 
   public function content() {
