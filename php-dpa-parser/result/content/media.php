@@ -17,6 +17,10 @@ abstract class Media extends \DPAParser\Result\Content {
     return $result;
   }
 
+  public function setSize($size) {
+    $this->size = $size;
+  }
+
   public static function parse($node) {
     $type = $node['media-type'];
     switch(strtolower($type)) {
