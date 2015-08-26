@@ -7,9 +7,14 @@
 
 require 'dpa_parser.php';
 
-$index_folder = '/tmp/dpa/dpa-SportsLine-index';
-$parser = new DPAParser\Parser($index_folder);
-$fixtures = $parser->fixtures();
+$index_folder      = '/tmp/dpa/dpa-SportsLine/dpa-SportsLine-index';
+$correction_folder = '/tmp/dpa/dpa-SportsLine/dpa-SportsLine-correction';
+$parser            = new DPAParser\Parser(
+  ['index_folder' => $index_folder, 'correction_folder' => $correction_folder]
+);
+
+$fixtures    = $parser->fixtures();
+$corrections = $parser->corrections();
 
 function walker($element) {
   if (is_a($element, '\DPAParser\Result\Content\Media\Image')) {
@@ -24,3 +29,8 @@ foreach ($fixtures as $fixture) {
   }
 }
 
+foreach ($corrections as $correction) {
+  // $correction->status()
+  // $correction->id()
+  // $correction->version()
+}

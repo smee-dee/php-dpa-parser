@@ -4,7 +4,7 @@ namespace DPAParser\Result;
 
 class Fixture extends Base {
   public function id() {
-    return $this->xml()->head->docdata->fixture['fix-id'];
+    return (string)$this->xml()->head->docdata->fixture['fix-id'];
   }
 
   public function media() {
