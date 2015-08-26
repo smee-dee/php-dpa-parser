@@ -3,7 +3,7 @@
 namespace DPAParser\Result\Content;
 
 abstract class Media extends \DPAParser\Result\Content {
-  protected $size = 'large', $base_path = '../';
+  protected $size = 'thumbnail', $base_path = '../';
 
   abstract public function media_tag();
 
