@@ -5,7 +5,7 @@
 # It also shows how to use a walker method on each content element
 # to manipulate things such as the image path.
 
-require 'dpa_parser.php';
+require 'php-dpa-parser.php';
 
 $index_folder      = '/tmp/dpa/dpa-SportsLine/dpa-SportsLine-index';
 $correction_folder = '/tmp/dpa/dpa-SportsLine/dpa-SportsLine-correction';
