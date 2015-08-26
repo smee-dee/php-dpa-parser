@@ -1,7 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 require 'php-dpa-parser/parser.php';
 
 foreach (glob('php-dpa-parser/result/*.php') as $file) {
