@@ -11,7 +11,7 @@ abstract class Media extends \DPAParser\Result\Content {
     $result = '';
     $result .= '<figure>';
     $result .= $this->media_tag();
-    $result .= $this->figcaption_tag();
+    $result .= $this->producer_tag();
     $result .= '</figure>';
     return $result;
   }
@@ -45,7 +45,7 @@ abstract class Media extends \DPAParser\Result\Content {
   }
 
   public function producer_tag() {
-    return '<span class="producer">' . $this->producer() . '</span>';
+    return '<figcaption>' . $this->producer() . '</figcaption>';
   }
 
   public function producer() {
